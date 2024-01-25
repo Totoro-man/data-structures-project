@@ -1,13 +1,5 @@
-class Node:
-    """Класс для узла односвязного списка"""
-    def __init__(self, data, next_node):
-        """
-        Конструктор класса Node
+from src.node import Node
 
-        :param data: данные, которые будут храниться в узле
-        """
-        self.data = data
-        self.next_node = next_node
 
 class LinkedList:
     """Класс для односвязного списка"""
@@ -41,10 +33,10 @@ class LinkedList:
 
         ll_string = ''
         while node:
-            ll_string += f' {str(node.data)} ->'
+            ll_string += f'{str(node.data)} -> '
             node = node.next_node
 
-        ll_string += ' None'
+        ll_string += 'None'
         return ll_string
 
     def to_list(self) -> list:

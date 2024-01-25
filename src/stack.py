@@ -1,14 +1,4 @@
-class Node:
-    """Класс для узла стека"""
-
-    def __init__(self, data, next_node):
-        """
-        Конструктор класса Node
-
-        :param data: данные, которые будут храниться в узле
-        """
-        self.data = data
-        self.next_node = next_node
+from src.node import Node
 
 
 class Stack:
@@ -35,3 +25,16 @@ class Stack:
         data = self.top.data
         self.top = self.top.next_node
         return data
+
+    def __str__(self):
+        """Магический метод для строкового представления объекта"""
+        if not self.top:
+            return ''
+        temp = self.top
+        result = ''
+        while temp:
+            result += f'{temp.data}'
+            temp = temp.next_node
+            if temp:
+                result += '\n'
+        return result

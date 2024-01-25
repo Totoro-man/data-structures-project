@@ -1,17 +1,4 @@
-import copy
-
-
-class Node:
-    """Класс для узла очереди"""
-
-    def __init__(self, data, next_node):
-        """
-        Конструктор класса Node
-
-        :param data: данные, которые будут храниться в узле
-        """
-        self.data = data
-        self.next_node = next_node
+from src.node import Node
 
 
 class Queue:
@@ -28,7 +15,7 @@ class Queue:
 
         :param data: данные, которые будут добавлены в очередь
         """
-        node = Node(data,None)
+        node = Node(data, None)
         if not self.tail:
             self.tail = node
             self.head = node
@@ -56,6 +43,8 @@ class Queue:
         temp = self.head
         result = ''
         while temp:
-            result += f'{temp.data}\n'
+            result += f'{temp.data}'
             temp = temp.next_node
+            if temp:
+                result += '\n'
         return result
